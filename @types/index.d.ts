@@ -36,6 +36,9 @@ interface ScrollBoxOptions {
     noTicker?: boolean
     ticker?: PIXI.Ticker
     divWheel?: HTMLElement
+    interaction?: PIXI.InteractionManager
+    scrollbarMouseDown?: number
+    scrollbarMouseOver?: number
 }
 
 /**
@@ -58,12 +61,16 @@ export declare class Scrollbox extends PIXI.Container {
     scrollbar: PIXI.Graphics
     scrollbarOffsetHorizontal: number
     scrollbarOffsetVertical: number
+    scrollBarWidthOverride: number
+    scrollBarHeightOverride: number
     scrollbarSize: number
     scrollHeight: number
     scrollLeft: number
     scrollTop: number
     scrollWidth: number
     stopPropagation: boolean
+    scrollbarWidth: number
+    scrollbarHeight: number
 
     /**
      * create a scrollbox
