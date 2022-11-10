@@ -37,6 +37,8 @@ interface ScrollBoxOptions {
     ticker?: PIXI.Ticker
     divWheel?: HTMLElement
     interaction?: PIXI.InteractionManager
+    scrollbarMouseDown?: number
+    scrollbarMouseOver?: number
 }
 
 /**
