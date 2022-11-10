@@ -110,8 +110,8 @@ export class Scrollbox extends PIXI.Container {
         this.scrollbar = this.addChild(new PIXI.Graphics())
         this.scrollbar.interactive = true
         this.scrollbar.on('pointerdown', this.scrollbarDown, this)
-        this.scrollbar.on('pointerover', this.scrollbarHover, this);
-        this.scrollbar.on('pointerout', this.scrollbarHoverOut, this);
+        this.scrollbar.on('pointerover', this.scrollbarHover, this)
+        this.scrollbar.on('pointerout', this.scrollbarHoverOut, this)
         this.interactive = true
         this.on('pointermove', this.scrollbarMove, this)
         this.on('pointerup', this.scrollbarUp, this)
@@ -365,49 +365,49 @@ export class Scrollbox extends PIXI.Container {
      * @private
      */
      _drawScrollbars() {
-        const bWidth = this.scrollBarWidthOverride ? this.scrollBarWidthOverride : this.boxWidth;
-        const bHeight = this.scrollBarHeightOverride ? this.scrollBarHeightOverride : this.boxHeight;
+        const bWidth = this.scrollBarWidthOverride ? this.scrollBarWidthOverride : this.boxWidth
+        const bHeight = this.scrollBarHeightOverride ? this.scrollBarHeightOverride : this.boxHeight
         this._isScrollbarHorizontal =
             this.overflowX === 'scroll'
             ? true
             : ['hidden', 'none'].indexOf(this.overflowX) !== -1
             ? false
-            : this.scrollWidth > this.options.boxWidth;
+            : this.scrollWidth > this.options.boxWidth
         this._isScrollbarVertical =
             this.overflowY === 'scroll'
             ? true
             : ['hidden', 'none'].indexOf(this.overflowY) !== -1
             ? false
-            : this.scrollHeight > this.options.boxHeight;
-        this.scrollbar.clear();
-        this.scrollWidth + (this.isScrollbarVertical ? this.options.scrollbarSize : 0);
-        this.scrollHeight + (this._isScrollbarHorizontal ? this.options.scrollbarSize : 0);
-        const width = this.scrollWidth + (this.isScrollbarVertical ? this.options.scrollbarSize : 0);
-        const height = this.scrollHeight + (this._isScrollbarHorizontal ? this.options.scrollbarSize : 0);
-        this.scrollbarTop = (this.content.top / height) * bHeight;
-        this.scrollbarTop = this.scrollbarTop < 0 ? 0 : this.scrollbarTop;
-        this.scrollbarHeight = (bHeight / height) * this.boxHeight;
+            : this.scrollHeight > this.options.boxHeight
+        this.scrollbar.clear()
+        this.scrollWidth + (this.isScrollbarVertical ? this.options.scrollbarSize : 0)
+        this.scrollHeight + (this._isScrollbarHorizontal ? this.options.scrollbarSize : 0)
+        const width = this.scrollWidth + (this.isScrollbarVertical ? this.options.scrollbarSize : 0)
+        const height = this.scrollHeight + (this._isScrollbarHorizontal ? this.options.scrollbarSize : 0)
+        this.scrollbarTop = (this.content.top / height) * bHeight
+        this.scrollbarTop = this.scrollbarTop < 0 ? 0 : this.scrollbarTop
+        this.scrollbarHeight = (bHeight / height) * this.boxHeight
         this.scrollbarHeight =
-            this.scrollbarTop + this.scrollbarHeight > bHeight ? bHeight - this.scrollbarTop : this.scrollbarHeight;
-        this.scrollbarLeft = (this.content.left / width) * bWidth;
-        this.scrollbarLeft = this.scrollbarLeft < 0 ? 0 : this.scrollbarLeft;
-        this.scrollbarWidth = (bWidth / width) * this.boxWidth;
+            this.scrollbarTop + this.scrollbarHeight > bHeight ? bHeight - this.scrollbarTop : this.scrollbarHeight
+        this.scrollbarLeft = (this.content.left / width) * bWidth
+        this.scrollbarLeft = this.scrollbarLeft < 0 ? 0 : this.scrollbarLeft
+        this.scrollbarWidth = (bWidth / width) * this.boxWidth
 
         this.scrollbarWidth =
-            this.scrollbarWidth + this.scrollbarLeft > bWidth ? bWidth - this.scrollbarLeft : this.scrollbarWidth;
+            this.scrollbarWidth + this.scrollbarLeft > bWidth ? bWidth - this.scrollbarLeft : this.scrollbarWidth
 
         let horizontalColour =
             this.pointerHover && this.pointerHover.type === 'horizontal'
             ? this.options.scrollbarMouseOver
-            : this.options.scrollbarForeground;
+            : this.options.scrollbarForeground
         horizontalColour =
-            this.pointerDown && this.pointerDown.type === 'horizontal' ? this.options.scrollbarMouseDown : horizontalColour;
+            this.pointerDown && this.pointerDown.type === 'horizontal' ? this.options.scrollbarMouseDown : horizontalColour
         let verticalColour =
             this.pointerHover && this.pointerHover.type === 'vertical'
             ? this.options.scrollbarMouseOver
-            : this.options.scrollbarForeground;
+            : this.options.scrollbarForeground
         verticalColour =
-            this.pointerDown && this.pointerDown.type === 'vertical' ? this.options.scrollbarMouseDown : verticalColour;
+            this.pointerDown && this.pointerDown.type === 'vertical' ? this.options.scrollbarMouseDown : verticalColour
 
         if (this.isScrollbarVertical) {
             this.scrollbar
@@ -418,7 +418,7 @@ export class Scrollbox extends PIXI.Container {
                 this.scrollbarSize,
                 bHeight
             )
-            .endFill();
+            .endFill()
         }
         if (this.isScrollbarHorizontal) {
             this.scrollbar
@@ -429,7 +429,7 @@ export class Scrollbox extends PIXI.Container {
                 bWidth,
                 this.scrollbarSize
             )
-            .endFill();
+            .endFill()
         }
         if (this.isScrollbarVertical) {
             this.scrollbar
@@ -441,7 +441,7 @@ export class Scrollbox extends PIXI.Container {
                 this.scrollbarHeight,
                 this.scrollbarSize / 2
             )
-            .endFill();
+            .endFill()
         }
         if (this.isScrollbarHorizontal) {
             this.scrollbar
@@ -453,10 +453,10 @@ export class Scrollbox extends PIXI.Container {
                 this.scrollbarSize,
                 this.scrollbarSize / 2
             )
-            .endFill();
+            .endFill()
         }
         // this.content.forceHitArea = new PIXI.Rectangle(0, 0 , this.boxWidth, this.boxHeight)
-        this.activateFade();
+        this.activateFade()
     }
 
     /**
@@ -626,20 +626,20 @@ export class Scrollbox extends PIXI.Container {
 
             const local = this.toLocal(e.data.global)
             if (this.pointerDown.type === 'horizontal') {
-            const width = this.scrollWidth + (this.isScrollbarVertical ? this.options.scrollbarSize : 0)
-            this.scrollbarLeft += local.x - this.pointerDown.last.x
-            this.content.left = (this.scrollbarLeft / bWidth) * width
-            this.pointerDown.last = local
-            this.update()
+                const width = this.scrollWidth + (this.isScrollbarVertical ? this.options.scrollbarSize : 0)
+                this.scrollbarLeft += local.x - this.pointerDown.last.x
+                this.content.left = (this.scrollbarLeft / bWidth) * width
+                this.pointerDown.last = local
+                this.update()
             } else if (this.pointerDown.type === 'vertical') {
-            const height = this.scrollHeight + (this.isScrollbarHorizontal ? this.options.scrollbarSize : 0)
-            this.scrollbarTop += local.y - this.pointerDown.last.y
-            this.content.top = (this.scrollbarTop / bHeight) * height
-            this.pointerDown.last = local
-            this.update()
+                const height = this.scrollHeight + (this.isScrollbarHorizontal ? this.options.scrollbarSize : 0)
+                this.scrollbarTop += local.y - this.pointerDown.last.y
+                this.content.top = (this.scrollbarTop / bHeight) * height
+                this.pointerDown.last = local
+                this.update()
             }
             if (this.options.stopPropagation) {
-            e.stopPropagation()
+                e.stopPropagation()
             }
         }
     }
