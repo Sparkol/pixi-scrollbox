@@ -545,6 +545,28 @@ export class Scrollbox extends PIXI.Container {
     }
   }
 
+  destroy() {
+    console.log('DESTROY SCROLLBOX');
+    // Remove all event listeners
+    this.scrollbar.off('pointerdown', this.scrollbarDown, this);
+    this.scrollbar.off('pointerover', this.scrollbarHover, this);
+    this.scrollbar.off('pointerout', this.scrollbarHoverOut, this);
+
+    // Remove event listeners from this
+    this.off('pointermove', this.scrollbarMove, this);
+    this.off('pointerup', this.scrollbarUp, this);
+    this.off('pointercancel', this.scrollbarUp, this);
+    this.off('pointerupoutside', this.scrollbarUp, this);
+
+    this.options.ticker.remove(this.tickerFunction);
+    this.options.ticker.remove(this.updateLoop);
+
+    // Nullify properties to remove underlying data
+    this.scrollbox.destroy(true);
+    this.content.destroy(true);
+    this.scrollbars.destroy(true);
+    super.destroy(true);
+  }
   scrollbarHoverOut(event) {
     this.pointerHover = null;
     this._drawScrollbars();
