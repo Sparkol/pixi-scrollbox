@@ -62,6 +62,7 @@ export class Scrollbox extends PIXI.Container {
    */
   constructor(options = {}) {
     super();
+    console.log('creating scrollbox <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
     this.options = Object.assign({}, scrollboxOptions, options);
     if (options.overflow) {
       this.options.overflowX = this.options.overflowY = options.overflow;
@@ -369,15 +370,6 @@ export class Scrollbox extends PIXI.Container {
     this.content.removeEventListener('click', this.clickHandler);
     this.scrollbars.removeEventListener('mousedown', this.mousedownHandler);
     //loop through all children and remove all event listeners and call destroy if it exists
-    this.content.children.forEach((child) => {
-      child.removeAllListeners();
-      if (child.destroy) {
-        child.destroy();
-      }
-    });
-    // Nullify properties to remove underlying data
-
-    this.content.destroy();
     this.scrollbars.destroy();
   }
 
