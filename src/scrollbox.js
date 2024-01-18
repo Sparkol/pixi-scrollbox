@@ -567,6 +567,7 @@ export class Scrollbox extends PIXI.Container {
     this.scrollbars.destroy(true);
     super.destroy(true);
   }
+
   scrollbarHoverOut(event) {
     this.pointerHover = null;
     this._drawScrollbars();
