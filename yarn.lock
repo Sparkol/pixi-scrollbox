@@ -65,7 +65,7 @@
   dependencies:
     "@types/offscreencanvas" "^2019.6.4"
 
-"@pixi/display@^6.0.2", "@pixi/display@^6.5.8", "@pixi/display@6.5.10":
+"@pixi/display@^6.0.2", "@pixi/display@6.5.10":
   "integrity" "sha512-NxFdDDxlbH5fQkzGHraLGoTMucW9pVgXqQm13TSmkA3NWIi/SItHL4qT2SI8nmclT9Vid1VDEBCJFAbdeuQw1Q=="
   "resolved" "https://registry.npmjs.org/@pixi/display/-/display-6.5.10.tgz"
   "version" "6.5.10"
@@ -75,12 +75,12 @@
   "resolved" "https://registry.npmjs.org/@pixi/extensions/-/extensions-6.5.10.tgz"
   "version" "6.5.10"
 
-"@pixi/interaction@^6.0.2", "@pixi/interaction@^6.5.8":
+"@pixi/interaction@^6.0.2":
   "integrity" "sha512-v809pJmXA2B9dV/vdrDMUqJT+fBB/ARZli2YRmI2dPbEbkaYr8FNmxCAJnwT8o+ymTx044Ie820hn9tVrtMtfA=="
   "resolved" "https://registry.npmjs.org/@pixi/interaction/-/interaction-6.5.10.tgz"
   "version" "6.5.10"
 
-"@pixi/math@^6.0.2", "@pixi/math@^6.5.8", "@pixi/math@6.5.10":
+"@pixi/math@^6.0.2", "@pixi/math@6.5.10":
   "integrity" "sha512-fxeu7ykVbMGxGV2S3qRTupHToeo1hdWBm8ihyURn3BMqJZe2SkZEECPd5RyvIuuNUtjRnmhkZRnF3Jsz2S+L0g=="
   "resolved" "https://registry.npmjs.org/@pixi/math/-/math-6.5.10.tgz"
   "version" "6.5.10"
@@ -95,7 +95,7 @@
   "resolved" "https://registry.npmjs.org/@pixi/settings/-/settings-6.5.10.tgz"
   "version" "6.5.10"
 
-"@pixi/ticker@^6.0.2", "@pixi/ticker@^6.5.8", "@pixi/ticker@6.5.10":
+"@pixi/ticker@^6.0.2", "@pixi/ticker@6.5.10":
   "integrity" "sha512-UqX1XYtzqFSirmTOy8QAK4Ccg4KkIZztrBdRPKwFSOEiKAJoGDCSBmyQBo/9aYQKGObbNnrJ7Hxv3/ucg3/1GA=="
   "resolved" "https://registry.npmjs.org/@pixi/ticker/-/ticker-6.5.10.tgz"
   "version" "6.5.10"
@@ -2147,10 +2147,10 @@
   "resolved" "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz"
   "version" "2.3.1"
 
-"pixi-viewport@^4.30.4":
-  "integrity" "sha512-TGj6Ymk/BU0wZcW4c1eP4e96aETJmB7jhjBflMjQU06/ZHPy7qHw8JyDqZ+C84SEg0ewCHjDNZ2vgR3Kjk74BQ=="
-  "resolved" "https://registry.npmjs.org/pixi-viewport/-/pixi-viewport-4.38.0.tgz"
-  "version" "4.38.0"
+"pixi-viewport@^5.0.3":
+  "integrity" "sha512-DGG7cg2vUltAiL2fanzYPLR+L6qBeoskPfbUXxN6CYKW+fkni5cF9J1t2WBTmyBnC3kVq3ATFE2KDi7zy2FY8A=="
+  "resolved" "https://registry.npmjs.org/pixi-viewport/-/pixi-viewport-5.0.3.tgz"
+  "version" "5.0.3"
 
 "pixi.js@8.2.5":
   "integrity" "sha512-cpN4f4Duj2mDPQeDQJQ33LXA8wIGMpWbhld1SklEwESRULYPUsY84zXC8B+Cyl+zojcXH7eY1OMEdbbIPMb+rA=="

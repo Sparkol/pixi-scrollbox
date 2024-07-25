@@ -71,18 +71,13 @@ export class Scrollbox extends PIXI.Container {
         ? this.options.fadeScrollboxEase
         : Penner[this.options.fadeScrollboxEase];
 
-    /**
-     * content in placed in here
-     * you can use any function from pixi-viewport on content to manually move the content (see https://davidfig.github.io/pixi-viewport/jsdoc/)
-     * @type {Viewport}
-     */
     this.content = this.addChild(
       new Viewport({
         passiveWheel: false,
         stopPropagation: this.options.stopPropagation,
         screenWidth: this.options.boxWidth,
         screenHeight: this.options.boxHeight,
-        interaction: this.options.interaction,
+        events: this.options.events,
         divWheel: this.options.divWheel,
       })
     );
@@ -509,7 +504,7 @@ export class Scrollbox extends PIXI.Container {
   scrollbarHover(event) {
     const boxWidth = this.scrollBarWidthOverride ? this.scrollBarWidthOverride : this.boxWidth;
     const boxHeight = this.scrollBarHeightOverride ? this.scrollBarHeightOverride : this.boxHeight;
-    const local = this.toLocal(event.global);
+    const local = event.getLocalPosition(this);
     if (this.isScrollbarHorizontal) {
       if (local.y > boxHeight - this.scrollbarOffsetHorizontal - this.scrollbarSize) {
         if (local.x >= this.scrollbarLeft && local.x <= this.scrollbarLeft + this.scrollbarWidth) {
@@ -551,7 +546,7 @@ export class Scrollbox extends PIXI.Container {
   scrollbarDown(e) {
     const boxWidth = this.scrollBarWidthOverride ? this.scrollBarWidthOverride : this.boxWidth;
     const boxHeight = this.scrollBarHeightOverride ? this.scrollBarHeightOverride : this.boxHeight;
-    const local = this.toLocal(e.global);
+    const local = e.getLocalPosition(this);
     if (this.isScrollbarHorizontal) {
       if (local.y > boxHeight) {
         if (local.x >= this.scrollbarLeft && local.x <= this.scrollbarLeft + this.scrollbarWidth) {
