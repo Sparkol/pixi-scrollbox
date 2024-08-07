@@ -464,7 +464,7 @@ export class Scrollbox extends PIXI.Container {
    */
   _drawMask() {
     this._maskContent.beginFill(0).drawRect(0, 0, this.boxWidth, this.boxHeight).endFill();
-    this.content.mask = this._maskContent;
+    // this.content.mask = this._maskContent;
   }
 
   /**
